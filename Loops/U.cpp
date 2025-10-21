@@ -4,11 +4,19 @@ using namespace std;
 int main(){
     long long n, a, b;
     cin >> n >> a >> b;
-    int sum = 0;
+    int total = 0;
+
     for (int i = 1; i<=n; i++){
-        if ((i%10)+(i%100)>=a && (i%10)+(i%100)<=b){
-            sum += i;
+        int x = i;
+        int sumDigits = 0;
+
+        while (x>0){
+            sumDigits += x%10;
+            x /= 10;
+        }
+        if (sumDigits >= a && sumDigits <= b){
+            total += i;
         }
     }
-    cout << sum;
+    cout << total;
 }
