@@ -3,25 +3,23 @@
 using namespace std;
 
 int main() {
-    vector<int> list;
-    int size;
-    cin >> size;
+    long long n;
+    cin >> n;
+    long long arr[n];
 
-    for (int i = 0; i<size; i++){
+    for (int i = 0; i<n; i++){
         int number;
         cin >> number;
-        list.push_back(number);
+        arr[i] = number;
     }
-
-    int number;
-    cin >> number;
     int index = -1;
-    for (int i = 0; i<size; i++){
-        if (list[i] == number){
+    int num;
+    cin >> num;
+    for (int i = 0; i<n; i++){
+        if (arr[i] == num){
             index = i;
             break;
         }
     }
     cout << index;
-    return 0;
 }

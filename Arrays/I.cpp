@@ -7,20 +7,20 @@ int main() {
     cin >> T;
     
     while (T--) {
-        int N;
-        cin >> N;
-        int arr[N];
+        int n;
+        cin >> n;
+        int arr[n];
 
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < n; i++) {
             cin >> arr[i];
         }
         
         int minVal = INT_MAX;
         
-        for (int i = 0; i < N; i++) {
-            for (int j = i + 1; j < N; j++) { 
-                int a = arr[i] + arr[j] + (j - i);
-                if (a < minVal) {
+        for (int i = 0; i<n; i++){
+            for (int j = i+1; j<n; j++){
+                long long a = arr[i] + arr[j] + (j-i);
+                if (a<minVal){
                     minVal = a;
                 }
             }

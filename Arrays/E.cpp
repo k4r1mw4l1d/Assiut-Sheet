@@ -12,16 +12,15 @@ int main() {
         arr[i] = number;
     }
 
-    int lowest;
-    int index;
-    for (int i = 0; i<size; i++){
-        if (arr[i] < lowest){
-            lowest = arr[i];
-            index = i+1;
+    int min = arr[0];
+    int index = 0;
+    for (int i = 0; i < size; i++){
+        if (arr[i] < min){
+            min = arr[i];
+            index = i;
         }
     }
-
-    cout << lowest << " " << index << endl;
+    cout << min << " " << index + 1 << endl;
 
     return 0;
 }

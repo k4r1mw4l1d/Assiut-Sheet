@@ -9,7 +9,7 @@ int main(){
 
     int sum = 0;
     for (int i = 0; i<number.size(); i++){
-        sum += number[i];
+        sum += number[i] - '0';
     }
     cout << sum;
     return 0;

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main(){
@@ -11,15 +12,17 @@ int main(){
         cin >> number;
         arr[i] = number;
     }
-
+    int minIndex;
     for (int i = 0; i<n-1; i++){
-        for (int j = 0; j<n-1-i; j++){
-            if (arr[j]>arr[j+1]){
-                int temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp; 
+        minIndex = i;
+        for (int j = i+1; j<n; j++){
+            if (arr[j]<arr[minIndex]){
+                minIndex = j;
             }
         }
+        int temp = arr[minIndex];
+        arr[minIndex] = arr[i];
+        arr[i] = temp;
     }
     for (auto x : arr){
         cout << x << " ";
